@@ -1,73 +1,142 @@
-:root{
-    --bg: #ffffff;
-    --panel: #ffffff;
-    --text: #111827;
-    --muted: #666666;
-    --accent: 141, 105, 175;
-    --accent-hex: #8d69af;
-    --nav-bg: rgba(141,105,175,1);
-    --link-on-accent: #f2f2f2;
-    --transition: 220ms cubic-bezier(.22,.9,.34,1);
-}
-
-*{box-sizing:border-box}
-body{
+body {
+    height: 100%;
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    color: var(--text);
-    background: var(--bg);
-    -webkit-font-smoothing:antialiased;
+    background-color: #e6e6e6;
 }
 
-.navbar{
-    background-color: var(--nav-bg);
-    overflow: hidden;
-    display:flex;
-    align-items:center;
-    padding: 0 14px;
+/* Navbar */
+.navbar {
+    background-color: #ff5c77;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 14px 0;
 }
 
-.navbar a{
-    display: inline-block;
-    color: var(--link-on-accent);
-    text-align: center;
-    padding: 14px 16px;
+.navbar a {
+    color: white;
     text-decoration: none;
-    margin-right: 12px;
-    transition: color var(--transition), transform var(--transition);
+    font-size: 15px;
 }
 
-.navbar a:hover{ color: #000; transform: translateY(-2px); cursor: pointer; }
+.navbar a:hover {
+    text-decoration: underline
+}
 
-/* small button used for the theme toggle */
-.btn{
-    appearance: none;
-    background: transparent;
-    border: 0;
-    color: var(--link-on-accent);
-    padding: 8px 10px;
-    margin-left: 8px;
-    border-radius: 8px;
+/* Main section */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 100px 100px;
+}
+
+/* Text */
+.intro {
+    max-width: 450px;
+}
+
+.intro h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.intro p {
+    color: gray;
+    line-height: 1.6;
+}
+
+/* Image (SMALL + CLEAN) */
+.pic img {
+    width: 260px;        /* same visual size as screenshot */
+    height: 260px;
+    border-radius: 20px; /* rounded square corners */
+    object-fit: cover;
+}
+/*About*/
+.about{
+    padding-left: 100px;
+}
+.about h1{
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+.about p{
+    color: gray;
+    line-height: 1.6;
+}
+/*Skills*/
+.skills{
+    padding: 100px 100px 100px;
+}
+.skill{
     cursor: pointer;
-    transition: background var(--transition), transform var(--transition);
+    transition: 0.3s ease;
 }
-.btn:hover{ transform: translateY(-2px); background: rgba(255,255,255,0.06); }
-
-/* Dark theme overrides */
-.theme-dark{
-    --bg: #0b1220;
-    --panel: #0f1724;
-    --text: #e6eef8;
-    --muted: #9aa4b2;
-    --nav-bg: linear-gradient(90deg, rgba(40,30,60,1), rgba(30,25,50,1));
-    --link-on-accent: #f3f4f6;
+.skill :hover{
+    transform: translateY(-6px);
+}
+.skill span{
+    font-size: 15px;
+    color: gray;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+.skills h1{
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+.skill-container{
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+/*Project*/
+.projects{
+    padding-top: 100px;
+}
+.project-container{
+    display: flex;
+    justify-content: space-around;
+}
+.project-container h3{
+    color: gray;
+    background-color: aqua;
+    width: 150px;
+    height: 80px;
+    text-align: center;
+    padding-top: 25px;
+    border: 2px solid orange;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+.project-container h3:hover{
+    transform: translateY(-6px);
+}
+.project-container a{
+    text-decoration: none;
+}
+/*Contact*/
+.contact p{
+    color: gray;
+}
+.contact-container{
+    text-align: center;
+    padding-top: 50px;
+}
+.contact-container a{
+    text-decoration: none;
+    color: rebeccapurple;
+}
+/*footer*/
+.footer {
+    background-color:#ff5c77 ; /* your requirement */
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 16px;
 }
 
-/* simple container/card examples for usage */
-.card{ background:var(--panel); color:var(--text); border-radius:10px; padding:16px; box-shadow:0 6px 18px rgba(2,6,23,0.06); }
-
-/* respect reduced motion */
-@media (prefers-reduced-motion: reduce){
-    *{ transition: none !important; }
-}
 
